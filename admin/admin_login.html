@@ -4,43 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Login</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to CSS -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="login-container">
         <h2>Admin Login</h2>
-        <form id="adminLoginForm">
-            <input type="email" id="email" placeholder="Email" required>
-            <input type="password" id="password" placeholder="Password" required>
+        <form action="admin_login.php" method="POST">
+            <input type="email" name="email" placeholder="Admin Email" required>
+            <input type="password" name="password" placeholder="Password" required>
             <button type="submit">Login</button>
-            <p id="error-message"></p>
         </form>
+        <a href="forgot_password.html">Forgot Password?</a>
     </div>
-
-    <script>
-        $(document).ready(function() {
-            $("#adminLoginForm").submit(function(e) {
-                e.preventDefault(); // Prevent form from refreshing page
-
-                var email = $("#email").val();
-                var password = $("#password").val();
-
-                $.ajax({
-                    url: "admin_login.php",
-                    type: "POST",
-                    data: { email: email, password: password },
-                    dataType: "json",
-                    success: function(response) {
-                        if (response.status === "success") {
-                            window.location.href = "admin_dashboard.html"; // Redirect to dashboard
-                        } else {
-                            $("#error-message").text(response.message).css("color", "red");
-                        }
-                    }
-                });
-            });
-        });
-    </script>
 </body>
 </html>

@@ -1,29 +1,35 @@
 <?php
 session_start();
-include 'db.php'; // Include database connection
-
-header("Content-Type: application/json"); // Set response as JSON
+include '../includes/db.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = $_POST['email'];
+    $email = trim($_POST['email']);
     $password = $_POST['password'];
 
-    // Query to check admin login
+    // Validate input
+    if (empty($email) || empty($password)) {
+        die("All fields are required!");
+    }
+
+    // Check if user is an admin
     $stmt = $conn->prepare("SELECT id, password FROM users WHERE email = ? AND role = 'admin'");
     $stmt->bind_param("s", $email);
     $stmt->execute();
-    $result = $stmt->get_result();
-    
-    if ($result->num_rows == 1) {
-        $row = $result->fetch_assoc();
-        if (password_verify($password, $row['password'])) {
-            $_SESSION['admin_id'] = $row['id']; // Store admin session
-            echo json_encode(["status" => "success", "message" => "Login successful"]);
+    $stmt->store_result();
+
+    if ($stmt->num_rows > 0) {
+        $stmt->bind_result($id, $hashed_password);
+        $stmt->fetch();
+
+        if (password_verify($password, $hashed_password)) {
+            $_SESSION['admin_id'] = $id;
+            header("Location: admin_dashboard.html");
+            exit;
         } else {
-            echo json_encode(["status" => "error", "message" => "Invalid password"]);
+            echo "Incorrect password!";
         }
     } else {
-        echo json_encode(["status" => "error", "message" => "Admin not found"]);
+        echo "No admin account found!";
     }
 }
 ?>
