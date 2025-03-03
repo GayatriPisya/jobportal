@@ -1,4 +1,4 @@
-job-portal/
+job-portal-system/
 │── 📁 admin/                     # Admin-related files
 │   │── admin_login.html           # Admin login page (Frontend)
 │   │── admin_dashboard.html       # Admin dashboard (Frontend)
@@ -9,32 +9,40 @@ job-portal/
 │   │── scripts.js                 # jQuery & JS functions
 │   │── 📜 admin_login.php         # Backend - Admin login
 │   │── 📜 logout.php              # Backend - Admin logout
-│   │── 📜 manage_users.php        # Backend - Manage users (View, Approve, Delete)
-│   │── 📜 manage_jobs.php         # Backend - Manage job posts
+│   │── 📜 manage_users.php        # Backend - Manage users
+│   │── 📜 manage_jobs.php         # Backend - Manage jobs
 │   │── 📜 manage_job_links.php    # Backend - Manage job links
+│
+│── 📁 employer/                   # Employer-related files
+│   │── employer_register.html     # Employer registration (Frontend)
+│   │── employer_login.html        # Employer login (Frontend)
+│   │── employer_dashboard.html    # Employer dashboard (Frontend)
+│   │── post_job.html              # Employer - Post job form (Frontend)
+│   │── 📜 employer_register.php   # Backend - Employer registration
+│   │── 📜 employer_login.php      # Backend - Employer login
+│   │── 📜 post_job.php            # Backend - Post a job
+│
+│── 📁 jobseeker/                   # Job Seeker-related files
+│   │── jobseeker_register.html    # Job Seeker registration (Frontend)
+│   │── jobseeker_login.html       # Job Seeker login (Frontend)
+│   │── jobseeker_dashboard.html   # Job Seeker dashboard (Frontend)
+│   │── apply_job.html             # Job Seeker - Apply for jobs (Frontend)
+│   │── 📜 jobseeker_register.php  # Backend - Job Seeker registration
+│   │── 📜 jobseeker_login.php     # Backend - Job Seeker login
+│   │── 📜 apply_job.php           # Backend - Apply for job
 │
 │── 📁 assets/                     # Static assets (CSS, JS, Images)
 │   │── logo.png                   # Project logo
-│   │── styles.css                  # Common CSS
-│   │── scripts.js                  # Common JavaScript/jQuery
+│   │── styles.css                 # Common CSS
+│   │── scripts.js                 # Common JavaScript/jQuery
 │
-│── 📁 includes/                    # Common backend files
+│── 📁 includes/                   # Common backend files
 │   │── 📜 db.php                   # Database connection file
-│
-│── 📁 employer/                    # Employer-related files (Future)
-│   │── employer_dashboard.html     # Employer dashboard (Frontend)
-│   │── post_job.html               # Employer - Post job form (Frontend)
-│   │── 📜 post_job.php             # Backend - Post a job
-│
-│── 📁 jobseeker/                   # Job Seeker files (Future)
-│   │── jobseeker_dashboard.html    # Job Seeker dashboard (Frontend)
-│   │── apply_job.html              # Job Seeker - Apply for jobs (Frontend)
-│   │── 📜 apply_job.php            # Backend - Apply for job
 │
 │── 📁 database/                    # Database-related files
 │   │── job_portal.sql              # Database export file (for backup)
 │
 │── index.html                      # Home Page (Frontend)
-│── about.html                      # About Page (Frontend)
+│── about.html                       # About Page (Frontend)
 │── contact.html                     # Contact Page (Frontend)
 │── README.md                        # Project documentation
