@@ -8,6 +8,7 @@ job-portal-system/
 │   │── styles.css                 # CSS for admin panel
 │   │── scripts.js                 # jQuery & JS functions
 │   │── 📜 admin_login.php         # Backend - Admin login
+|   │── 📜 forgot_password.php     # Backend - Admin forgot password
 │   │── 📜 logout.php              # Backend - Admin logout
 │   │── 📜 manage_users.php        # Backend - Manage users
 │   │── 📜 manage_jobs.php         # Backend - Manage jobs
