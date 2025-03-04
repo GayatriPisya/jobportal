@@ -21,7 +21,7 @@ job-portal-system/
 │   │── post_job.html              # Employer - Post job form (Frontend)
 │   │── 📜 employer_register.php   # Backend - Employer registration
 │   │── 📜 employer_login.php      # Backend - Employer login
-│   │── 📜 post_job.php            # Backend - Post a jo
+│   │── 📜 post_job.php            # Backend - Post a job
 │
 │── 📁 jobseeker/                   # Job Seeker-related files
 │   │── jobseeker_register.html    # Job Seeker registration (Frontend)
