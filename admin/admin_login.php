@@ -3,33 +3,31 @@ session_start();
 include '../includes/db.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = trim($_POST['email']);
+    $email = $_POST['email'];
     $password = $_POST['password'];
 
-    // Validate input
-    if (empty($email) || empty($password)) {
-        die("All fields are required!");
-    }
-
-    // Check if user is an admin
-    $stmt = $conn->prepare("SELECT id, password FROM users WHERE email = ? AND role = 'admin'");
+    $sql = "SELECT * FROM users WHERE email = ? AND role = 'admin'";
+    $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $email);
     $stmt->execute();
-    $stmt->store_result();
+    $result = $stmt->get_result();
 
-    if ($stmt->num_rows > 0) {
-        $stmt->bind_result($id, $hashed_password);
-        $stmt->fetch();
+    if ($result->num_rows == 1) {
+        $row = $result->fetch_assoc();
+        $hashed_password = $row['password']; // Fetch hashed password from DB
+
+        echo "Stored Hashed Password: " . $hashed_password . "<br>";
 
         if (password_verify($password, $hashed_password)) {
-            $_SESSION['admin_id'] = $id;
-            header("Location: admin_dashboard.html");
-            exit;
+            echo "✅ Password Matched!";
         } else {
-            echo "Incorrect password!";
+            echo "❌ Incorrect Password!";
         }
     } else {
-        echo "No admin account found!";
+        echo "❌ Admin not found!";
     }
+
+    $stmt->close();
 }
+$conn->close();
 ?>

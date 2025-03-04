@@ -47,3 +47,50 @@ job-portal-system/
 │── about.html                       # About Page (Frontend)
 │── contact.html                     # Contact Page (Frontend)
 │── README.md                        # Project documentation
+
+
+#Tables & Schema
+1)Users (For job seekers, employers, and admin)
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    email VARCHAR(100) UNIQUE,
+    password VARCHAR(255),
+    role ENUM('admin', 'employer', 'job_seeker'),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+2)Jobs (For job postings)
+
+CREATE TABLE jobs (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    employer_id INT,
+    title VARCHAR(255),
+    description TEXT,
+    category VARCHAR(100),
+    location VARCHAR(100),
+    salary DECIMAL(10,2),
+    posted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (employer_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+3)Applications (For job seekers applying for jobs)
+CREATE TABLE applications (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    job_id INT,
+    user_id INT,
+    resume VARCHAR(255),  -- Store file path
+    applied_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (job_id) REFERENCES jobs(id) ON DELETE CASCADE,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+4)Admin Job Links Management (If admin manages external job links)
+CREATE TABLE job_links (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255),
+    url VARCHAR(255),
+    category VARCHAR(100),
+    added_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
