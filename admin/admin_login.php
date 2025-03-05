@@ -1,42 +1,21 @@
 <?php
 session_start();
-include '../includes/db.php';  // Ensure the path is correct
+include 'db.php';
+
+define("ADMIN_EMAIL", "gayatripisya@gmail.com");  // Change to your admin email
+define("ADMIN_HASHED_PASSWORD", "26265fd51f8850901201ef1e79dce080"); // MD5 of your password
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = trim($_POST['email']);
     $password = trim($_POST['password']);
+    $hashed_input_password = md5($password); // Hash the input password using MD5
 
-    // Validate input
-    if (empty($email) || empty($password)) {
-        echo "<script>alert('⚠️ All fields are required!'); window.location.href='admin_login.html';</script>";
+    if ($email === ADMIN_EMAIL && $hashed_input_password === ADMIN_HASHED_PASSWORD) {
+        $_SESSION['admin_email'] = $email;
+        header("Location: admin_dashboard.html");
         exit();
-    }
-
-    // Check if the admin exists
-    $sql = "SELECT * FROM users WHERE email = ? AND role = 'admin'";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    if ($result->num_rows == 1) {
-        $row = $result->fetch_assoc();
-        $hashed_password = $row['password'];  // Fetch hashed password from DB
-
-        if (password_verify($password, $hashed_password)) {
-            // ✅ Password Matched - Set Session and Redirect
-            $_SESSION['admin_email'] = $row['email'];
-            $_SESSION['admin_name'] = $row['name']; // Store admin name for dashboard
-            header("Location: admin_dashboard.php");
-            exit();
-        } else {
-            echo "<script>alert('❌ Incorrect Password!'); window.location.href='admin_login.html';</script>";
-        }
     } else {
-        echo "<script>alert('❌ Admin not found!'); window.location.href='admin_login.html';</script>";
+        echo "<script>alert('❌ Invalid credentials!'); window.location.href='admin_login.html';</script>";
     }
-
-    $stmt->close();
 }
-$conn->close();
 ?>

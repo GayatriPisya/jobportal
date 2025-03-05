@@ -34,8 +34,8 @@ job-portal-system/
 │
 │── 📁 assets/                     # Static assets (CSS, JS, Images)
 │   │── logo.png                   # Project logo
-│   │── styles.css                 # Common CSS
-│   │── scripts.js                 # Common JavaScript/jQuery
+│   │── Images               
+│                 
 │
 │── 📁 includes/                   # Common backend files
 │   │── 📜 db.php                   # Database connection file
@@ -44,9 +44,11 @@ job-portal-system/
 │   │── job_portal.sql              # Database export file (for backup)
 │
 │── index.html                      # Home Page (Frontend)
+|──styles.css                        # Styles 
 │── about.html                       # About Page (Frontend)
 │── contact.html                     # Contact Page (Frontend)
 │── README.md                        # Project documentation
+
 
 
 #Tables & Schema

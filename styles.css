@@ -1,0 +1,138 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #FFF2F2;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #2D336B !important;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #FFF2F2 !important;
+}
+
+.navbar-nav .nav-link {
+    color: #FFF2F2 !important;
+    font-size: 1rem;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #A9B5DF !important;
+}
+
+.dropdown-menu {
+    background-color: #2D336B;
+}
+
+.dropdown-item {
+    color: white !important;
+}
+
+.dropdown-item:hover {
+    background-color: #A9B5DF !important;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(to right, #2D336B, #7886C7);
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero-section h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.hero-section .btn {
+    background-color: #A9B5DF;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.hero-section .btn:hover {
+    background-color: #FFF2F2;
+    color: #2D336B;
+}
+
+/* Team Section */
+.card {
+    border-radius: 10px;
+    overflow: hidden;
+    background: #FFF;
+    transition: 0.3s;
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    height: 250px;
+    object-fit: cover;
+}
+
+.card-title {
+    font-weight: bold;
+    color: #2D336B;
+}
+
+.card-text {
+    color: #7886C7;
+}
+
+/* Guide Section */
+.card.mx-auto {
+    background-color: #A9B5DF;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.card.mx-auto img {
+    border-radius: 10px 10px 0 0;
+}
+
+/* Contact Form */
+.container form {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+    background-color: #2D336B;
+    color: white;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    .hero-section p {
+        font-size: 1rem;
+    }
+}

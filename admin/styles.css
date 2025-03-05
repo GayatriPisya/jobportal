@@ -1,9 +1,6 @@
-/* Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
 body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #bfedc1, #cccccc); /* Different Green Shades */
+    font-family: Arial, sans-serif;
+    background-color: #FFF2F2;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,70 +8,51 @@ body {
     margin: 0;
 }
 
-.login-container {
-    background: white;
-    padding: 25px;
+.login-container, .dashboard {
+    background-color: #A9B5DF;
+    padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
     text-align: center;
-    width: 350px;
+    width: 300px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
-    font-size: 22px;
-    color: #2E7D32;
-    margin-bottom: 20px;
+h2, h1 {
+    color: #2D336B;
 }
 
-.input-group {
-    display: flex;
-    align-items: center;
-    border: 1px solid #81C784;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 15px;
-    background: #E8F5E9; /* Light Green */
-}
-
-.input-group i {
-    color: #388E3C;
-    margin-right: 10px;
-    font-size: 18px;
-}
-
-.input-group input {
-    border: none;
-    outline: none;
-    font-size: 16px;
+input {
     width: 100%;
-    background: none;
-    padding: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #2D336B;
+    border-radius: 5px;
 }
 
 button {
     width: 100%;
-    background: #388E3C;
+    padding: 10px;
+    background-color: #2D336B;
     color: white;
-    padding: 12px;
     border: none;
     border-radius: 5px;
-    font-size: 18px;
     cursor: pointer;
-    transition: 0.3s;
 }
 
 button:hover {
-    background: #2E7D32;
+    background-color: #7886C7;
 }
 
-a {
-    display: block;
-    margin-top: 15px;
-    color: #2E7D32;
+.logout-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #2D336B;
+    color: white;
     text-decoration: none;
-    font-size: 14px;
+    border-radius: 5px;
 }
 
-a:hover {
-    text-decoration: underline;
+.logout-btn:hover {
+    background-color: #7886C7;
 }

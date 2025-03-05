@@ -3,15 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job Portal - Select Role</title>
+    <title>Job Portal - Welcome</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 <body>
-    <div class="role-selection">
-        <h2>Select Your Role</h2>
-        <button onclick="location.href='admin/admin_login.html'">Admin</button>
-        <button onclick="location.href='employe/employer_register.html'">Employer</button>
-        <button onclick="location.href='jobseeker/jobseeker_register.html'">Job Seeker</button>
-    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Job Portal</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-user"></i> Select Your Role
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="admin/admin_login.html"><i class="fas fa-user-shield"></i> Admin</a></li>
+                            <li><a class="dropdown-item" href="employe/employer_register.html"><i class="fas fa-briefcase"></i> Employer</a></li>
+                            <li><a class="dropdown-item" href="jobseeker/jobseeker_register.html"><i class="fas fa-user"></i> Job Seeker</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <div class="container text-center">
+            <h1>Welcome to Job Portal</h1>
+            <p>Your one-stop solution for job seekers and employers</p>
+            <a href="about.html" class="btn btn-primary">Learn More</a>
+        </div>
+    </header>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-center text-white py-3">
+        <p>&copy; 2025 Job Portal. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
