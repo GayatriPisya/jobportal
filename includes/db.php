@@ -1,10 +1,10 @@
 <?php
 $servername = "localhost";
-$username = "root";  // Update this if you have a different DB username
-$password = "";  // Update this if your MySQL has a password
-$database = "job_portal"; // Update with your actual database name
+$username = "root";  // Your MySQL username
+$password = "";  // Your MySQL password (leave empty if no password)
+$database = "job_portal";  // Your actual database name
 
-// Create database connection
+// Create connection
 $conn = new mysqli($servername, $username, $password, $database);
 
 // Check connection
