@@ -8,48 +8,61 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
-
-    <!-- Navbar -->
-    <nav class="navbar">
-        <a href="index.html">Home</a>
-        
+ <!-- Navbar -->
+ <nav class="navbar">
+    <div class="logo">
+        <i class="fa-solid fa-briefcase"></i> Job Portal System
+    </div>
+    <div class="nav-links">
         <div class="dropdown">
-            <button><i class="fa-solid fa-user"></i> Select Role</button>
+            <button><i class="fa-solid fa-user"></i> Select Your Role <i class="fa-solid fa-angle-down"></i></button>
             <div class="dropdown-content">
                 <a href="admin/admin_login.html"><i class="fa-solid fa-user-shield"></i> Admin</a>
-                <a href="employer/employer_register.html"><i class="fa-solid fa-building"></i> Employer</a>
-                <a href="jobseeker/jobseeker_register.html"><i class="fa-solid fa-user-tie"></i> Job Seeker</a>
+                <a href="employe/employer_register.html"><i class="fa-solid fa-building"></i> Employer</a>
+                <a href="jobseeker/jobseeker_register.html"><i class="fa-solid fa-user"></i> Job Seeker</a>
             </div>
         </div>
-
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-    </nav>
+        <a href="about.html"><i class="fa-solid fa-info-circle"></i> About</a>
+        <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+    </div>
+</nav>
 
     <!-- Contact Section -->
-    <section class="main-content">
+    <section class="contact">
         <h1>Contact Us</h1>
-        <p>If you have any questions, feel free to reach out to us.</p>
+        <p>We’d love to hear from you! Fill out the form below or reach out to us directly.</p>
 
-        <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" rows="5" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
+        <div class="contact-container">
+            <!-- Contact Form -->
+            <form class="contact-form">
+                <div class="input-group">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="input-group">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="input-group">
+                    <i class="fa-solid fa-comment"></i>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
+            </form>
 
-        <h2>Our Location</h2>
-        <iframe src="https://www.google.com/maps/embed?..." width="100%" height="300" style="border:0;" allowfullscreen></iframe>
+            <!-- Contact Details -->
+            <div class="contact-info">
+                <h2>Our Contact Details</h2>
+                <p><i class="fa-solid fa-map-marker-alt"></i> Totagummada, Odisha</p>
+                <p><i class="fa-solid fa-phone"></i> +91 9876543210</p>
+                <p><i class="fa-solid fa-envelope"></i> support@jobportal.com</p>
+            </div>
+        </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2025 Job Portal | <a href="contact.html">Contact Us</a></p>
-        <div class="social-icons">
-            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-        </div>
+        &copy; 2025 Job Portal System | All Rights Reserved.
     </footer>
 
 </body>

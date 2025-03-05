@@ -9,66 +9,74 @@
 </head>
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar">
-        <a href="index.html">Home</a>
-        
+   <!-- Navbar -->
+   <nav class="navbar">
+    <div class="logo">
+        <i class="fa-solid fa-briefcase"></i> Job Portal System
+    </div>
+    <div class="nav-links">
         <div class="dropdown">
-            <button><i class="fa-solid fa-user"></i> Select Role</button>
+            <button><i class="fa-solid fa-user"></i> Select Your Role <i class="fa-solid fa-angle-down"></i></button>
             <div class="dropdown-content">
                 <a href="admin/admin_login.html"><i class="fa-solid fa-user-shield"></i> Admin</a>
-                <a href="employer/employer_register.html"><i class="fa-solid fa-building"></i> Employer</a>
-                <a href="jobseeker/jobseeker_register.html"><i class="fa-solid fa-user-tie"></i> Job Seeker</a>
+                <a href="employe/employer_register.html"><i class="fa-solid fa-building"></i> Employer</a>
+                <a href="jobseeker/jobseeker_register.html"><i class="fa-solid fa-user"></i> Job Seeker</a>
             </div>
         </div>
-
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-
+        <a href="about.html"><i class="fa-solid fa-info-circle"></i> About</a>
+        <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+    </div>
+</nav>
     <!-- About Section -->
-    <section class="main-content">
+    <section class="about">
         <h1>About Our Project</h1>
-        <p>Our job portal connects job seekers with employers through a seamless online platform.</p>
+        <p>This Job Portal System is a platform that connects job seekers with employers. It provides an easy-to-use interface for job listings, applications, and hiring processes.</p>
+    </section>
 
+    <!-- Team Section -->
+    <section class="team">
         <h2>Meet Our Team</h2>
-        <div class="features">
-            <div class="feature-box">
-                <img src="team1.jpg" alt="Member 1" width="100">
-                <h3>Gayatri</h3>
-                <p>Backend & Database</p>
+        <div class="team-container">
+            <div class="team-member">
+                <img src="images/member1.jpg" alt="Member 1">
+                <h3>Member 1</h3>
+                <p>Backend Developer</p>
             </div>
-            <div class="feature-box">
-                <img src="team2.jpg" alt="Member 2" width="100">
+            <div class="team-member">
+                <img src="images/member2.jpg" alt="Member 2">
                 <h3>Member 2</h3>
                 <p>Frontend Developer</p>
             </div>
-            <div class="feature-box">
-                <img src="team3.jpg" alt="Member 3" width="100">
+            <div class="team-member">
+                <img src="images/member3.jpg" alt="Member 3">
                 <h3>Member 3</h3>
+                <p>Database Engineer</p>
+            </div>
+            <div class="team-member">
+                <img src="images/member4.jpg" alt="Member 4">
+                <h3>Member 4</h3>
                 <p>UI/UX Designer</p>
             </div>
-            <div class="feature-box">
-                <img src="team4.jpg" alt="Member 4" width="100">
-                <h3>Member 4</h3>
-                <p>Quality Analyst</p>
-            </div>
-            <div class="feature-box">
-                <img src="team5.jpg" alt="Member 5" width="100">
+            <div class="team-member">
+                <img src="images/member5.jpg" alt="Member 5">
                 <h3>Member 5</h3>
                 <p>Project Manager</p>
             </div>
         </div>
+    </section>
 
-        <h2>Guide</h2>
-        <div class="feature-box">
-            <img src="professor.jpg" alt="Guide" width="120">
-            <h3>Professor Name</h3>
-            <p>Project Guide & Mentor</p>
+    <!-- Guide Section -->
+    <section class="guide">
+        <h2>Project Guide</h2>
+        <div class="guide-container">
+            <img src="images/guide.jpg" alt="Guide Image">
+            <div class="guide-info">
+                <h3>Prof. [Guide Name]</h3>
+                <p>Our project guide, providing valuable mentorship and technical guidance throughout the development of this project.</p>
+            </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <p>&copy; 2025 Job Portal | <a href="contact.html">Contact Us</a></p>
         <div class="social-icons">

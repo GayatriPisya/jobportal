@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job Portal - Home</title>
+    <title>Job Portal</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
@@ -11,54 +11,113 @@
 
     <!-- Navbar -->
     <nav class="navbar">
-        <a href="index.html">Home</a>
-        
-        <div class="dropdown">
-            <button><i class="fa-solid fa-user"></i> Select Role</button>
-            <div class="dropdown-content">
-                <a href="admin/admin_login.html"><i class="fa-solid fa-user-shield"></i> Admin</a>
-                <a href="employer/employer_register.html"><i class="fa-solid fa-building"></i> Employer</a>
-                <a href="jobseeker/jobseeker_register.html"><i class="fa-solid fa-user-tie"></i> Job Seeker</a>
-            </div>
+        <div class="logo" >
+            <i class="fa-solid fa-briefcase"></i> Job Portal System
         </div>
-
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
+        <div class="nav-links">
+            <div class="dropdown">
+                <button><i class="fa-solid fa-user"></i> Select Your Role <i class="fa-solid fa-angle-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="admin/admin_login.html"><i class="fa-solid fa-user-shield"></i> Admin</a>
+                    <a href="employe/employer_register.html"><i class="fa-solid fa-building"></i> Employer</a>
+                    <a href="jobseeker/jobseeker_register.html"><i class="fa-solid fa-user"></i> Job Seeker</a>
+                </div>
+            </div>
+            <a href="about.html"><i class="fa-solid fa-info-circle"></i> About</a>
+            <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <h1>Welcome to Job Portal</h1>
-        <p>Your gateway to find the perfect job or hire the best talent.</p>
+        <h1><i class="fa-solid fa-magnifying-glass"></i> Find Your Perfect Job Match</h1>
+        <p>Discover your next career opportunity with top companies.</p>
+        <a href="jobseeker/jobseeker_register.html" class="btn">Get Started <i class="fa-solid fa-hand-pointer"></i></a>
     </section>
 
-    <!-- Features -->
+    <!-- Features Section -->
     <section class="features">
-        <div class="feature-box">
-            <i class="fa-solid fa-briefcase"></i>
-            <h3>Find Jobs</h3>
-            <p>Explore top job opportunities across various industries.</p>
+        <h2>Why Choose Us?</h2>
+        <div class="feature-grid">
+            <div class="feature-box">
+                <i class="fa-solid fa-users"></i>
+                <h3>Multiple User Roles</h3>
+                <p>Admin, Employers, and Job Seekers - each with unique functionalities.</p>
+            </div>
+            <div class="feature-box">
+                <i class="fa-solid fa-briefcase"></i>
+                <h3>Job Listings</h3>
+                <p>Employers can post jobs, and seekers can apply easily.</p>
+            </div>
+            <div class="feature-box">
+                <i class="fa-solid fa-shield-alt"></i>
+                <h3>Secure Login</h3>
+                <p>End-to-end verification for a safe experience.</p>
+            </div>
+            <div class="feature-box">
+                <i class="fa-solid fa-mobile-alt"></i>
+                <h3>Responsive Design</h3>
+                <p>Works perfectly on all devices.</p>
+            </div>
         </div>
-        <div class="feature-box">
-            <i class="fa-solid fa-users"></i>
-            <h3>Hire Talent</h3>
-            <p>Employers can post job openings and connect with skilled professionals.</p>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <h2>How It Works</h2>
+        <div class="steps">
+            <div class="step">
+                <i class="fa-solid fa-user-plus"></i>
+                <h3>Sign Up</h3>
+                <p>Create your account as a Job Seeker or Employer.</p>
+            </div>
+            <div class="step">
+                <i class="fa-solid fa-search"></i>
+                <h3>Search Jobs</h3>
+                <p>Browse job listings and apply for the best matches.</p>
+            </div>
+            <div class="step">
+                <i class="fa-solid fa-file-signature"></i>
+                <h3>Get Hired</h3>
+                <p>Connect with top employers and land your dream job.</p>
+            </div>
         </div>
-        <div class="feature-box">
-            <i class="fa-solid fa-lock"></i>
-            <h3>Secure Authentication</h3>
-            <p>Role-based login system ensures safe and efficient access.</p>
+    </section>
+
+    <!-- Job Categories -->
+    <section class="job-categories">
+        <h2>Top Job Categories</h2>
+        <div class="category-grid">
+            <div class="category">
+                <i class="fa-solid fa-laptop-code"></i>
+                <h3>Web Development</h3>
+            </div>
+            <div class="category">
+                <i class="fa-solid fa-chart-line"></i>
+                <h3>Marketing</h3>
+            </div>
+            <div class="category">
+                <i class="fa-solid fa-stethoscope"></i>
+                <h3>Healthcare</h3>
+            </div>
+            <div class="category">
+                <i class="fa-solid fa-school"></i>
+                <h3>Education</h3>
+            </div>
+            <div class="category">
+                <i class="fa-solid fa-wrench"></i>
+                <h3>Engineering</h3>
+            </div>
+            <div class="category">
+                <i class="fa-solid fa-pen-nib"></i>
+                <h3>Design</h3>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2025 Job Portal | <a href="contact.html">Contact Us</a></p>
-        <div class="social-icons">
-            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-        </div>
+        &copy; 2025 Job Portal | All Rights Reserved
     </footer>
 
 </body>
