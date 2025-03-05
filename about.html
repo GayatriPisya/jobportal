@@ -6,58 +6,77 @@
     <title>About Us - Job Portal</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">Job Portal</a>
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        
+        <div class="dropdown">
+            <button><i class="fa-solid fa-user"></i> Select Role</button>
+            <div class="dropdown-content">
+                <a href="admin/admin_login.html"><i class="fa-solid fa-user-shield"></i> Admin</a>
+                <a href="employer/employer_register.html"><i class="fa-solid fa-building"></i> Employer</a>
+                <a href="jobseeker/jobseeker_register.html"><i class="fa-solid fa-user-tie"></i> Job Seeker</a>
+            </div>
         </div>
+
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
     </nav>
 
-    <!-- About Project -->
-    <section class="container my-5">
-        <h2 class="text-center">About Our Project</h2>
-        <p class="text-center">This job portal connects job seekers and employers with a user-friendly interface and secure authentication.</p>
-    </section>
+    <!-- About Section -->
+    <section class="main-content">
+        <h1>About Our Project</h1>
+        <p>Our job portal connects job seekers with employers through a seamless online platform.</p>
 
-    <!-- Team Members -->
-    <section class="container my-5">
-        <h2 class="text-center">Meet Our Team</h2>
-        <div class="row">
-            <!-- Member 1 -->
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="team/member1.jpg" class="card-img-top" alt="Member 1">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Member 1</h5>
-                        <p class="card-text">Role: Backend Developer</p>
-                    </div>
-                </div>
+        <h2>Meet Our Team</h2>
+        <div class="features">
+            <div class="feature-box">
+                <img src="team1.jpg" alt="Member 1" width="100">
+                <h3>Gayatri</h3>
+                <p>Backend & Database</p>
             </div>
-            <!-- Add 4 more team members here -->
+            <div class="feature-box">
+                <img src="team2.jpg" alt="Member 2" width="100">
+                <h3>Member 2</h3>
+                <p>Frontend Developer</p>
+            </div>
+            <div class="feature-box">
+                <img src="team3.jpg" alt="Member 3" width="100">
+                <h3>Member 3</h3>
+                <p>UI/UX Designer</p>
+            </div>
+            <div class="feature-box">
+                <img src="team4.jpg" alt="Member 4" width="100">
+                <h3>Member 4</h3>
+                <p>Quality Analyst</p>
+            </div>
+            <div class="feature-box">
+                <img src="team5.jpg" alt="Member 5" width="100">
+                <h3>Member 5</h3>
+                <p>Project Manager</p>
+            </div>
         </div>
-    </section>
 
-    <!-- Guide Section -->
-    <section class="container my-5">
-        <h2 class="text-center">Our Guide</h2>
-        <div class="card mx-auto text-center" style="max-width: 400px;">
-            <img src="guide.jpg" class="card-img-top" alt="Guide">
-            <div class="card-body">
-                <h5 class="card-title">Professor's Name</h5>
-                <p class="card-text">Guide & Mentor</p>
-            </div>
+        <h2>Guide</h2>
+        <div class="feature-box">
+            <img src="professor.jpg" alt="Guide" width="120">
+            <h3>Professor Name</h3>
+            <p>Project Guide & Mentor</p>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark text-center text-white py-3">
-        <p>&copy; 2025 Job Portal. All rights reserved.</p>
+    <footer class="footer">
+        <p>&copy; 2025 Job Portal | <a href="contact.html">Contact Us</a></p>
+        <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
