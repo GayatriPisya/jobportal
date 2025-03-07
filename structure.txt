@@ -1,7 +1,7 @@
 job-portal-system/
 │── 📁 admin/                     # Admin-related files
 │   │── admin_login.html           # Admin login page (Frontend)
-│   │── admin_dashboard.html       # Admin dashboard (Frontend)
+│   │── admin_dashboard.php       # Admin dashboard (Frontend and Backend)
 │   │── manage_users.html          # Admin - Manage users (Frontend)
 │   │── manage_jobs.html           # Admin - Manage jobs (Frontend)
 │   │── manage_job_links.html      # Admin - Manage job links (Frontend)

@@ -1,21 +1,35 @@
 <?php
 session_start();
-include 'db.php';
+include '../includes/db.php'; // Database connection
 
-define("ADMIN_EMAIL", "gayatripisya@gmail.com");  // Change to your admin email
-define("ADMIN_HASHED_PASSWORD", "52c76da7c56b606849df5a038d1bb561"); // MD5 of your password
+// Enable error reporting for debugging (Remove this in production)
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = trim($_POST['email']);
     $password = trim($_POST['password']);
-    $hashed_input_password = md5($password); // Hash the input password using MD5
 
-    if ($email === ADMIN_EMAIL && $hashed_input_password === ADMIN_HASHED_PASSWORD) {
-        $_SESSION['admin_email'] = $email;
-        header("Location: admin_dashboard.html");
-        exit();
+    $sql = "SELECT * FROM users WHERE email = ? AND role = 'admin'";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows == 1) {
+        $user = $result->fetch_assoc();
+        if (password_verify($password, $user['password'])) {
+            $_SESSION['admin_id'] = $user['id'];
+            $_SESSION['admin_email'] = $user['email'];
+            header("Location: admin_dashboard.php"); // Redirect to dashboard
+            exit();
+        } else {
+            header("Location: admin_login.html?error=Invalid credentials.");
+            exit();
+        }
     } else {
-        echo "<script>alert('❌ Invalid credentials!'); window.location.href='admin_login.html';</script>";
+        header("Location: admin_login.html?error=Admin account not found.");
+        exit();
     }
 }
 ?>
