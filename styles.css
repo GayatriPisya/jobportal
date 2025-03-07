@@ -142,7 +142,7 @@ body {
 /* Hero Section */
 .hero {
     text-align: center;
-    padding: 150px 20px;
+    padding: 130px 20px;
     color: white;
     animation: fadeIn 1.2s ease-in-out;
 }
@@ -172,7 +172,8 @@ body {
     font-size: 20px;
     border-radius: 10px;
     text-decoration: none;
-    margin-top: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
     transition: all 0.3s ease-in-out;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
@@ -218,33 +219,139 @@ body {
 /* Features Section */
 .features {
     text-align: center;
-    padding: 50px;
+}
+
+.features h2 {
+    font-size: 32px;
+    color: #ffffff;
+    margin-bottom: 30px;
+    bottom: 10px;
 }
 
 .feature-grid {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
     justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
 }
 
 .feature-box {
-    background: #C68FE6;
-    padding: 20px;
-    border-radius: 8px;
-    color: white;
-    width: 250px;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    color: rgb(9, 1, 255);
     text-align: center;
-    transition: 0.3s;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .feature-box:hover {
-    background: #6C48C5;
+    background: #3506ab;
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .feature-box i {
-    font-size: 40px;
+    font-size: 45px;
+    margin-bottom: 12px;
+    color: #0a41e8;
+}
+
+.feature-box h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.feature-box p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .feature-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+/* How It Works Section */
+.how-it-works {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.how-it-works h2 {
+    font-size: 32px;
+    color: #f8f8f8;
+    margin-bottom: 30px;
+}
+
+.steps {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.step {
+    background: #C68FE6;
+    padding: 30px;
+    border-radius: 12px;
+    color: white;
+    width: 280px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.step::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 5px;
+    background: #6C48C5;
+    transform: translateX(-50%);
+    transition: width 0.3s;
+}
+
+.step:hover::before {
+    width: 120%;
+}
+
+.step:hover {
+    background: #6C48C5;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.step i {
+    font-size: 50px;
+    margin-bottom: 15px;
+    color: #FFF7F7;
+}
+
+.step h3 {
+    font-size: 22px;
     margin-bottom: 10px;
+}
+
+.step p {
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .steps {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 /* Job Categories */
