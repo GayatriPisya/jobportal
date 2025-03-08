@@ -43,6 +43,8 @@ job-portal-system/
 │   │── job_portal.sql              # Database export file (for backup)
 │
 │── index.html                      # Home Page (Frontend)
+│── navbar.html
+│── footer.html
 |──styles.css                        # Styles 
 │── about.html                       # About Page (Frontend)
 │── contact.html                     # Contact Page (Frontend)

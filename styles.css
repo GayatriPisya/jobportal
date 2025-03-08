@@ -4,248 +4,84 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Arial', sans-serif;
-    scroll-behavior: smooth;
-}
-html, body {
-    height: 100%;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Main Content Area */
-.main-content {
-    flex: 1; /* Pushes footer to the bottom */
 }
 
 body {
-    background-color: #0b064a;
-    color: #ffffff;
-}
-
-/* Navbar */
-.navbar {
-    position: fixed;
-    font-size: large;
-    top: 0;
-    width: 100%;
-    background: #6a7fd4a1;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: white;
-    z-index: 1000;
-    transition: background 0.3s ease-in-out;
-}
-
-.navbar.scrolled {
-    background: #0F2796;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.nav-links {
-    display: flex;
-    gap: 20px;
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    transition: 0.3s;
-    padding: 8px 12px;
-    border-radius: 5px;
-}
-
-.nav-links a:hover {
-    background: white;
-    color: #0F2796;
-}
-
-/* Dropdown Menu */
-.dropdown {
-    position: relative;
-}
-
-.dropdown button {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    padding: 8px 12px;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background: white;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    overflow: hidden;
-    min-width: 180px;
-    top: 100%;
-    right: 0;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 0.3s, transform 0.3s;
-}
-
-.dropdown-content a {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: #1230AE;
-    padding: 12px;
-    text-decoration: none;
-}
-
-.dropdown-content a:hover {
-    background: #8f93e6;
-    color: white;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Mobile Responsive Navbar */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        background: #1230AE;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 200px;
-        padding: 10px;
-        border-radius: 5px;
-    }
-
-    .nav-links a {
-        display: block;
-        padding: 10px;
-        text-align: center;
-    }
-
-    .menu-toggle {
-        display: block;
-        cursor: pointer;
-        font-size: 24px;
-    }
+    background: linear-gradient(to bottom, rgba(2, 2, 37, 0.934), rgba(0, 0, 0, 0.756)), url('assets/jobportal.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 /* Hero Section */
 .hero {
-    text-align: center;
-    padding: 130px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
     color: white;
-    animation: fadeIn 1.2s ease-in-out;
 }
 
-/* Animated Heading */
 .hero h1 {
     font-size: 40px;
-    font-weight: bold;
     margin-bottom: 10px;
-    opacity: 0;
-    animation: slideIn 1.2s ease-in-out forwards;
 }
 
 .hero p {
     font-size: 20px;
     margin-top: 10px;
-    opacity: 0;
-    animation: fadeIn 1.5s ease-in-out forwards;
 }
 
-/* Call-to-Action Button */
+/* Button */
 .btn {
-    display: inline-block;
-    background-color: #8f93e6;
+    background-color: #C68FE6;
     color: white;
     padding: 14px 25px;
     font-size: 20px;
+    border: none;
     border-radius: 10px;
-    text-decoration: none;
-    margin-top: 30px;
+    cursor: pointer;
     transition: all 0.3s ease-in-out;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Button Hover Effect */
 .btn:hover {
-    background-color: #ffffff;
-    color: #797ee4;
+    background-color: #6C48C5;
     transform: translateY(-3px);
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes slideIn {
-    from { transform: translateY(-20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .hero {
-        padding: 120px 15px;
-    }
-    
-    .hero h1 {
-        font-size: 32px;
-    }
-
-    .hero p {
-        font-size: 18px;
-    }
-
-    .btn {
-        font-size: 18px;
-        padding: 12px 20px;
-    }
 }
 
 /* Features Section */
 .features {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    padding: 50px 20px;
 }
 
 .features h2 {
     font-size: 32px;
-    color: #ffffff;
     margin-bottom: 30px;
-    bottom: 10px;
 }
 
 .feature-grid {
     display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 25px;
-    justify-content: center;
-    margin: 25px;
 }
 
 .feature-box {
-    background: #ffffff;
+    background: white;
     padding: 25px;
     border-radius: 12px;
-    color: rgb(9, 1, 255);
+    color: #0b064a;
     text-align: center;
     transition: all 0.3s ease-in-out;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .feature-box:hover {
-    background: #3506ab;
+    background: #C68FE6;
     color: white;
     transform: translateY(-5px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
@@ -254,7 +90,6 @@ body {
 .feature-box i {
     font-size: 45px;
     margin-bottom: 12px;
-    color: #0a41e8;
 }
 
 .feature-box h3 {
@@ -267,185 +102,22 @@ body {
     line-height: 1.5;
 }
 
-/* Mobile Responsive */
-@media (max-width: 768px) {
-    .feature-grid {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-}
-/* How It Works Section */
-.how-it-works {
-    text-align: center;
-    padding: 60px 20px;
-}
-
-.how-it-works h2 {
-    font-size: 32px;
-    color: #f8f8f8;
-    margin-bottom: 30px;
-}
-
-.steps {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-}
-
-.step {
-    background: #C68FE6;
-    padding: 30px;
-    border-radius: 12px;
-    color: white;
-    width: 280px;
-    text-align: center;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: relative;
-    overflow: hidden;
-}
-
-.step::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 100%;
-    height: 5px;
-    background: #6C48C5;
-    transform: translateX(-50%);
-    transition: width 0.3s;
-}
-
-.step:hover::before {
-    width: 120%;
-}
-
-.step:hover {
-    background: #6C48C5;
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.step i {
-    font-size: 50px;
-    margin-bottom: 15px;
-    color: #FFF7F7;
-}
-
-.step h3 {
-    font-size: 22px;
-    margin-bottom: 10px;
-}
-
-.step p {
-    font-size: 15px;
-    line-height: 1.5;
-}
-
-/* Mobile Responsive */
-@media (max-width: 768px) {
-    .steps {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-/* Job Categories */
-.job-categories {
-    text-align: center;
-    padding: 50px;
-}
-
-.category-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 20px;
-    padding: 20px;
-}
-
-.category {
-    background: #6C48C5;
-    padding: 20px;
-    border-radius: 8px;
-    color: white;
-    text-align: center;
-    transition: 0.3s;
-}
-
-.category:hover {
-    background: #C68FE6;
-}
-
-.category i {
-    font-size: 30px;
-    margin-bottom: 10px;
-}
-
-/* Footer */
-.footer {
-    background: #6a7fd4a1;
-    color: white;
-    text-align: center;
-    padding: 15px 0;
-    width: 100%;
-    position: relative;
-    bottom: 0;
-}
-
-/* Footer Content */
-.footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-
-/* Social Media Icons */
-.social-icons {
-    display: flex;
-    gap: 15px;
-}
-
-.social-icons a {
-    color: white;
-    font-size: 20px;
-    transition: 0.3s;
-}
-
-.social-icons a:hover {
-    color: #C68FE6;
-}
-
-/* Responsive Footer */
-@media (max-width: 600px) {
-    .footer-content {
-        padding: 10px;
-    }
-    .social-icons {
-        gap: 10px;
-    }
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        align-items: center;
+    .hero {
+        height: auto;
+        padding: 20px;
     }
 
-    .nav-links {
+    .features {
         flex-direction: column;
-        gap: 10px;
     }
 
     .feature-grid {
-        flex-direction: column;
+        grid-template-columns: 1fr;
     }
-
-    .steps {
-        flex-direction: column;
+    .feature-box {
+        margin: 15px 0;
     }
 }
+
