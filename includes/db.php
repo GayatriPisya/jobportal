@@ -1,7 +1,7 @@
 <?php
 $host = "localhost";
-$username = "root"; // Change if necessary
-$password = ""; // Change if necessary
+$username = "root";  // Change if necessary
+$password = "";  // Change if necessary
 $database = "job_portal";
 
 $conn = new mysqli($host, $username, $password, $database);

@@ -5,22 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Login</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .login-container {
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-group i {
+            position: absolute;
+            margin-left: -30px;
+            margin-top: 12px;
+            color: #aaa;
+        }
+    </style>
 </head>
 <body>
-    <div class="container mt-5">
-        <h2 class="text-center">Admin Login</h2>
-        <form action="admin_login.php" method="POST" class="w-50 mx-auto">
-            <div class="mb-3">
-                <label>Email:</label>
-                <input type="email" name="email" class="form-control" required>
-            </div>
-            <div class="mb-3">
-                <label>Password:</label>
-                <input type="password" name="password" class="form-control" required>
-            </div>
-            <button type="submit" class="btn btn-primary w-100">Login</button>
-            <?php if (isset($_GET['error'])) echo "<p class='text-danger mt-2'>" . htmlspecialchars($_GET['error']) . "</p>"; ?>
-        </form>
+    <div class="container">
+        <div class="login-container">
+            <h2 class="text-center">Admin Login</h2>
+            <form action="admin_login.php" method="POST">
+                <div class="mb-3 position-relative">
+                    <label>Email:</label>
+                    <input type="email" name="email" class="form-control" required>
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="mb-3 position-relative">
+                    <label>Password:</label>
+                    <input type="password" name="password" class="form-control" required>
+                    <i class="fas fa-lock"></i>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Login</button>
+
+                <!-- Error Message -->
+                <p id="error-message" class="text-danger mt-2"></p>
+            </form>
+        </div>
     </div>
+
+    <script>
+        // Get error message from URL if exists
+        const urlParams = new URLSearchParams(window.location.search);
+        const error = urlParams.get('error');
+
+        if (error) {
+            document.getElementById("error-message").textContent = error;
+        }
+    </script>
 </body>
 </html>

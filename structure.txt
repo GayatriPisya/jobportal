@@ -6,7 +6,6 @@ job-portal-system/
 │   │── manage_jobs.html           # Admin - Manage jobs (Frontend)
 │   │── manage_job_links.html      # Admin - Manage job links (Frontend)
 │   │── styles.css                 # CSS for admin panel
-│   │── scripts.js                 # jQuery & JS functions
 │   │── 📜 admin_login.php         # Backend - Admin login
 |   │── 📜 forgot_password.php     # Backend - Admin forgot password
 │   │── 📜 logout.php              # Backend - Admin logout
