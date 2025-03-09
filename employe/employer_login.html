@@ -3,84 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employer Login</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <title>Employe login</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     <style>
         body {
-            background-color: #f8f9fa;
+            background: linear-gradient(to bottom, rgba(2, 2, 37, 0.934), rgba(0, 0, 0, 0.756)), url('/assets/jobportal.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
         }
-        .login-card {
-            margin: 100px auto;
-            width: 400px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-        }
-        .login-card .card-header {
-            background-color: #6c48c5;
-            color: #fff;
-            border-radius: 10px 10px 0 0;
-            padding: 10px;
-        }
-        .login-card .card-header i {
-            font-size: 20px;
-            margin-right: 10px;
-        }
-        .login-card .card-body {
-            padding: 20px;
-        }
-        .login-card .form-group {
-            margin-bottom: 15px;
-        }
-        .login-card .form-group i {
-            font-size: 20px;
-            margin-right: 10px;
-        }
-        .login-card .form-group input {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+
+        .login-container {
+            border-top: 5px solid #c7c6dcdd;
+            border-bottom: 5px solid #c7c6dcdd; 
+            display: flex;
+            background: #ffffff9b;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(216, 208, 208, 0.42);
+            overflow: hidden;
+            max-width: 800px;
             width: 100%;
         }
-        .login-card button {
-            background-color: #6c48c5;
+
+        .left-panel {
+            background: linear-gradient(135deg, #0508547b, #041a5a);
             color: #fff;
-            padding: 10px 20px;
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .btn-register {
+            background-color: #ffffff;
             border: none;
-            border-radius: 5px;
-            cursor: pointer;
+            padding: 12px;
             width: 100%;
+            border-radius: 6px;
+            font-size: 16px;
+            color: #090643;
+            cursor: pointer;
+            margin-top: 10px;
         }
-        .login-card p {
+
+        .btn-register:hover {
+            background-color: #090f3e;
+            color: white;
+        }
+
+        .login-form {
+            padding: 40px;
+            width: 60%;
+        }
+        .left-panel h2 {
+            font-size: 34px;
+            font-weight: bold;
+        }
+
+        .left-panel p {
             margin-top: 20px;
         }
-        .login-card a {
-            color: #6c48c5;
+        .login-logo {
+            font-size: 28px;
+            color: #06093d;
+            
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .btn-primary {
+           background-color: #09073d;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            border-radius: 6px;
+            font-size: 16px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: rgba(41, 44, 59, 0.788);
+            color: #ffffff;
         }
     </style>
 </head>
 <body>
-    <div class="login-card">
-        <div class="card-header">
-            <i class="fa-solid fa-briefcase"></i> Job Portal
+    <div class="login-container">
+        <div class="left-panel">
+            <h2>Welcome Back</h2>
+            <p>Login to explore more opportunities.</p>
+            <p class="text-center">Don't have an account?</p>
+            <button class="btn-register" onclick="window.location.href='employer_register.html'">Register</button>
         </div>
-        <div class="card-body">
-            <h2 class="text-center">Employer Login</h2>
+        <div class="login-form">
+            <div class="login-logo">
+                <i class="fas fa-user"></i> Employe Login
+            </div>
             <form action="employer_login.php" method="POST">
                 <div class="form-group">
-                    <i class="fa-solid fa-envelope"></i>
-                    <input type="email" name="email" placeholder="Employer Email" required>
+                    <label for="email">
+                        <i class="fas fa-envelope"></i> Email
+                    </label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
                 </div>
                 <div class="form-group">
-                    <i class="fa-solid fa-lock"></i>
-                    <input type="password" name="password" placeholder="Password" required>
+                    <label for="password">
+                        <i class="fas fa-lock"></i> Password
+                    </label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
                 </div>
-                <button type="submit">Login</button>
+                <button type="submit" class="btn btn-primary">Login</button>
             </form>
-            <p class="text-center">Don't have an account? <a href="employer_register.html">Register</a></p>
         </div>
     </div>
 </body>
 </html>
-
