@@ -1,16 +1,17 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job Portal - Employer Registration</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <title>Job Seeker Registration - Job Portal</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         body {
-            background-color: #f4f6f9;
+            background: linear-gradient(to bottom, rgba(2, 2, 37, 0.934), rgba(0, 0, 0, 0.756)), url('/assets/jobportal.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
             justify-content: center;
@@ -19,135 +20,111 @@
             margin: 0;
         }
 
-        .register-card {
-            background-color: #fff;
+        .register-container {
+            border-top: 5px solid #c7c6dcdd;
+            border-bottom: 5px solid #c7c6dcdd; 
+            display: flex;
+            background: #ffffff9b;
             border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-            width: 100%;
-            max-width: 500px;
+            box-shadow: 0 4px 8px rgba(216, 208, 208, 0.42);
+            overflow: hidden;
+            width: 800px;
         }
 
-        .register-logo {
-            font-size: 28px;
-            color: #007bff;
-            margin-bottom: 25px;
-            text-align: center;
-        }
-
-        .register-logo i {
-            margin-right: 8px;
-        }
-
-        .form-control {
-            border-radius: 6px;
-            border: 1px solid #ccc;
-            padding: 12px;
-            font-size: 16px;
-        }
-
-        .btn-primary {
-            background-color: #007bff;
-            border-color: #007bff;
+        .register-left {
+            background: linear-gradient(135deg, #0508547b, #041a5a);
             color: #fff;
-            padding: 14px 22px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            background-color: #0056b3;
-        }
-
-        .register-footer {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             text-align: center;
-            margin-top: 25px;
         }
 
-        .register-footer a {
-            color: #007bff;
-            text-decoration: none;
+        .register-left h2 {
+            font-size: 34px;
+            font-weight: bold;
         }
 
-        .register-footer a:hover {
-            text-decoration: underline;
+        .register-left p {
+            margin-top: 20px;
+        }
+
+        .btn-login {
+            background-color: #ffffff;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            border-radius: 6px;
+            font-size: 16px;
+            color: #090643;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .btn-login:hover {
+            background-color: #061535;
+            color: white;
+        }
+
+        .register-right {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .form-group {
             margin-bottom: 1.5rem;
         }
 
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-        }
-
-        .form-group input {
+        .btn-register {
+            background-color: #09073d;
+            border: none;
+            padding: 12px;
             width: 100%;
-            padding: 0.75rem;
-            font-size: 1rem;
-            line-height: 1.25;
-            color: #495057;
-            background-color: #fff;
-            background-clip: padding-box;
-            border: 1px solid #ced4da;
-            border-radius: 0.25rem;
-            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            border-radius: 6px;
+            font-size: 16px;
+            color: #fff;
         }
-
-        .form-group input:focus {
-            border-color: #80bdff;
-            outline: 0;
-            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-        }
-
-        .form-group input::placeholder {
-            color: #6c757d;
+        .btn-register:hover{
+            background-color: rgba(41, 44, 59, 0.788);
+            color: #ffffff;
         }
     </style>
 </head>
-
 <body>
-    <div class="register-card">
-        <div class="register-logo">
-            <i class="fas fa-briefcase"></i> Job Portal
+    <div class="register-container">
+        <div class="register-left">
+            <h2><i class="fas fa-handshake"></i> Join with Us</h2>
+            <p>Sign up now and start exploring new job opportunities.</p>
+            <p class="text-center mt-3">Already have an account?</p>
+            <button class="btn btn-login" onclick="window.location.href='employer_login.html'">Login</button>
         </div>
-        <h2 class="text-center">Employer Registration</h2>
-        <form action="employer_register.php" method="POST">
-            <div class="form-group">
-                <label for="name">
-                    <i class="fas fa-user"></i> Name
-                </label>
-                <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">
-                    <i class="fas fa-envelope"></i> Email
-                </label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
-            </div>
-            <div class="form-group">
-                <label for="password">
-                    <i class="fas fa-lock"></i> Password
-                </label>
-                <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
-            </div>
-            <div class="form-group">
-                <label for="confirm_password">
-                    <i class="fas fa-lock"></i> Confirm Password
-                </label>
-                <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required>
-            </div> 
-            <button type="submit" class="btn btn-primary btn-block">Register</button>
-        </form>
-        <div class="register-footer">
-            <p>Already have an account? <a href="employer_login.html">Login</a></p>
+        <div class="register-right">
+            
+            <form action="employer_register.php" method="POST">
+                <div class="form-group">
+                    <label for="name"><i class="fas fa-user"></i> Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password"><i class="fas fa-lock"></i> Password</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm_password"><i class="fas fa-lock"></i> Confirm Password</label>
+                    <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required>
+                </div>
+                <button type="submit" class="btn btn-register">Register</button>
+            </form>
         </div>
     </div>
 </body>
-
 </html>
-

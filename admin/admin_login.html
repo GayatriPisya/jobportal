@@ -5,55 +5,132 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Login</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         body {
-            background-color: #f8f9fa;
+            background: linear-gradient(to bottom, rgba(2, 2, 37, 0.934), rgba(0, 0, 0, 0.756)), url('/assets/jobportal.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
         }
+
         .login-container {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 40px;
             max-width: 400px;
-            margin: 100px auto;
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            color: #fff;
         }
-        .form-group i {
+
+        .login-container h2 {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .login-container p {
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .form-control {
+            background: rgba(255, 255, 255, 0.724);
+            border: none;
+            color: #0a0a3b;
+            padding-left: 45px;
+            padding-right: 45px; /* Added padding for the eye icon */
+            height: 45px;
+            border-radius: 8px;
+        }
+
+        .form-control::placeholder {
+            color: #0d0833;
+        }
+
+        .input-group i {
             position: absolute;
-            margin-left: -30px;
-            margin-top: 12px;
-            color: #aaa;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #090c3a;
+        }
+
+        .input-group .fa-envelope,
+        .input-group .fa-lock {
+            left: 15px;
+            color: #090c3a;
+        }
+
+        .password-toggle {
+            right: 15px;
+            cursor: pointer;
+        }
+
+        .btn-login {
+            background: #1b1a43;
+            color: #fff;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn-login:hover {
+            background: #babdd7;
+            color: #090c3a;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="login-container">
-            <h2 class="text-center">Admin Login</h2>
-            <form action="admin_login.php" method="POST">
-                <div class="mb-3 position-relative">
-                    <label>Email:</label>
-                    <input type="email" name="email" class="form-control" required>
-                    <i class="fas fa-user"></i>
-                </div>
-                <div class="mb-3 position-relative">
-                    <label>Password:</label>
-                    <input type="password" name="password" class="form-control" required>
-                    <i class="fas fa-lock"></i>
-                </div>
-                <button type="submit" class="btn btn-primary w-100">Login</button>
-
-                <!-- Error Message -->
-                <p id="error-message" class="text-danger mt-2"></p>
-            </form>
-        </div>
+    <div class="login-container">
+        <i style="font-size: 60px;" class="fa-solid fa-circle-user"></i>
+        <br>
+        <h2>Admin Login</h2>
+        <p>Access the admin panel securely.</p>
+        <form action="admin_login.php" method="POST">
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" name="email" class="form-control" placeholder="Email" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
+                <i class="fas fa-eye password-toggle" id="togglePassword"></i>
+            </div>
+            <button type="submit" class="btn btn-login">Login</button>
+            <p id="error-message" class="error-message"></p>
+        </form>
     </div>
 
     <script>
-        // Get error message from URL if exists
+        document.getElementById("togglePassword").addEventListener("click", function () {
+            const passwordField = document.getElementById("password");
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                this.classList.remove("fa-eye");
+                this.classList.add("fa-eye-slash");
+            } else {
+                passwordField.type = "password";
+                this.classList.remove("fa-eye-slash");
+                this.classList.add("fa-eye");
+            }
+        });
+
+        // Display error message from URL
         const urlParams = new URLSearchParams(window.location.search);
         const error = urlParams.get('error');
-
         if (error) {
             document.getElementById("error-message").textContent = error;
         }
