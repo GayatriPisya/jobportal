@@ -9,23 +9,7 @@
 </head>
 <body>
  <!-- Navbar -->
- <nav class="navbar">
-    <div class="logo">
-        <i class="fa-solid fa-briefcase"></i> Job Portal System
-    </div>
-    <div class="nav-links">
-        <div class="dropdown">
-            <button><i class="fa-solid fa-user"></i> Select Your Role <i class="fa-solid fa-angle-down"></i></button>
-            <div class="dropdown-content">
-                <a href="admin/admin_login.html"><i class="fa-solid fa-user-shield"></i> Admin</a>
-                <a href="employe/employer_register.html"><i class="fa-solid fa-building"></i> Employer</a>
-                <a href="jobseeker/jobseeker_register.html"><i class="fa-solid fa-user"></i> Job Seeker</a>
-            </div>
-        </div>
-        <a href="about.html"><i class="fa-solid fa-info-circle"></i> About</a>
-        <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
-    </div>
-</nav>
+ <div id="navbar"></div>
 <div class="main-content">
     <!-- Contact Section -->
     <section class="contact">
@@ -53,7 +37,7 @@
             <!-- Contact Details -->
             <div class="contact-info">
                 <h2>Our Contact Details</h2>
-                <p><i class="fa-solid fa-map-marker-alt"></i> Totagummada, Odisha</p>
+                <p><i class="fa-solid fa-map-marker-alt"></i> Our location</p>
                 <p><i class="fa-solid fa-phone"></i> +91 9876543210</p>
                 <p><i class="fa-solid fa-envelope"></i> support@jobportal.com</p>
             </div>
@@ -63,18 +47,17 @@
    
 </div>
 
-<footer class="footer">
-    <div class="footer-content">
-        <p>&copy; 2025 Job Portal | All Rights Reserved</p>
-        <div class="social-icons">
-            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-        </div>
-    </div>
-</footer>
-    
+<div id="footer"></div>
+ <!-- Load Navbar & Footer -->
+ <script>
+    async function loadComponent(id, file) {
+        const response = await fetch(file);
+        const content = await response.text();
+        document.getElementById(id).innerHTML = content;
+    }
+    loadComponent("navbar", "navbar.html");
+    loadComponent("footer", "footer.html");
+</script>
 
 </body>
 </html>
