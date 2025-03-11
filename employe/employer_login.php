@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (password_verify($password, $hashed_password)) {
             $_SESSION['employer_id'] = $id;
             $_SESSION['employer_name'] = $name;
-            header("Location: employe_dashboard.html"); // Redirect to employer dashboard
+            header("Location: employe_dashboard.php"); // Redirect to employer dashboard
             exit();
         } else {
             echo "Error: Incorrect password.";

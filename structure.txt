@@ -16,8 +16,7 @@ job-portal-system/
 │── 📁 employer/                   # Employer-related files
 │   │── employer_register.html     # Employer registration (Frontend)
 │   │── employer_login.html        # Employer login (Frontend)
-│   │── employer_dashboard.html    # Employer dashboard (Frontend)
-│   │── post_job.html              # Employer - Post job form (Frontend)
+│   │── employer_dashboard.php    # Employer dashboard (Frontend and Backend)
 │   │── 📜 employer_register.php   # Backend - Employer registration
 │   │── 📜 employer_login.php      # Backend - Employer login
 │   │── 📜 post_job.php            # Backend - Post a job
