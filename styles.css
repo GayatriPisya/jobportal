@@ -320,44 +320,6 @@ body {
     color: #6C757D;
 }
 
-/* Guide Section */
-.guide {
-    padding: 60px 20px;
-    text-align: center;
-}
-
-.guide-content {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    max-width: 900px;
-    margin: auto;
-}
-
-.guide-image img {
-    width: 100%;
-    max-width: 250px;
-    border-radius: 50%;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-}
-
-.guide-text {
-    max-width: 450px;
-    text-align: left;
-}
-
-.guide-text h3 {
-    font-size: 22px;
-    color: #211C84;
-}
-
-.guide-text p {
-    font-size: 16px;
-    color: #6C757D;
-}
-
 /* Responsive */
 @media (max-width: 768px) {
     .about-content, .team-grid, .guide-content {
