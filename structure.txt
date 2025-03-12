@@ -38,9 +38,6 @@ job-portal-system/
 │── 📁 includes/                   # Common backend files
 │   │── 📜 db.php                   # Database connection file
 │
-│── 📁 database/                    # Database-related files
-│   │── job_portal.sql              # Database export file (for backup)
-│
 │── index.html                      # Home Page (Frontend)
 │── navbar.html
 │── footer.html
