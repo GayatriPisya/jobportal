@@ -61,7 +61,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -69,34 +68,77 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $job_id ? "Edit Job" : "Post a Job"; ?> - Employer Dashboard</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <style>
+        .container {
+            max-width: 600px;
+            margin-top: 20px;
+            padding: 20px;
+        }
+        .form-control {
+            background-color:rgb(247, 247, 247);
+            border: 1px solidrgb(158, 181, 203);
+            border-radius: 0.25rem;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+        .btn-primary {
+            align-items: center;
+            background-color: #007bff;
+            border-color:rgb(35, 51, 67);
+            color: #fff;
+        }
+        .btn-primary:hover {
+            background-color:rgb(0, 217, 0);
+            border-color:rgb(31, 49, 69);
+        }
+        .btn-primary:focus {
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .form-group label {
+            font-weight: bold;
+        }
+        @media (max-width: 575px) {
+            .container {
+                margin-top: 20px;
+            }
+            .form-group {
+                margin-bottom: 0.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container mt-5">
-        <h2 class="text-center"><?php echo $job_id ? "Edit Job" : "Post a New Job"; ?></h2>
+        <h2 class="text-center"><i class="fas fa-edit mr-2"></i><?php echo $job_id ? "Edit Job" : "Post a New Job"; ?></h2>
         <form action="post_job.php" method="POST">
             <input type="hidden" name="job_id" value="<?php echo $job_id; ?>">
             <div class="form-group">
-                <label for="title">Job Title:</label>
+                <label for="title"><i class="fas fa-briefcase mr-2"></i>Job Title:</label>
                 <input type="text" class="form-control" id="title" name="title" value="<?php echo htmlspecialchars($title); ?>" required>
             </div>
             <div class="form-group">
-                <label for="category">Category:</label>
+                <label for="category"><i class="fas fa-tags mr-2"></i>Category:</label>
                 <input type="text" class="form-control" id="category" name="category" value="<?php echo htmlspecialchars($category); ?>" required>
             </div>
             <div class="form-group">
-                <label for="location">Location:</label>
+                <label for="location"><i class="fas fa-map-marker-alt mr-2"></i>Location:</label>
                 <input type="text" class="form-control" id="location" name="location" value="<?php echo htmlspecialchars($location); ?>" required>
             </div>
             <div class="form-group">
-                <label for="salary">Salary:</label>
+                <label for="salary"><i class="fas fa-dollar-sign mr-2"></i>Salary:</label>
                 <input type="number" step="0.01" class="form-control" id="salary" name="salary" value="<?php echo htmlspecialchars($salary); ?>" required>
             </div>
             <div class="form-group">
-                <label for="description">Job Description:</label>
+                <label for="description"><i class="fas fa-file-alt mr-2"></i>Job Description:</label>
                 <textarea class="form-control" id="description" name="description" rows="4" required><?php echo htmlspecialchars($description); ?></textarea>
             </div>
             <div class="form-group">
-                <label for="apply_link">Application Link:</label>
+                <label for="apply_link"><i class="fas fa-link mr-2"></i>Application Link:</label>
+                
                 <input type="url" class="form-control" id="apply_link" name="apply_link" value="<?php echo htmlspecialchars($apply_link); ?>" required>
             </div>
             <button type="submit" class="btn btn-primary"><?php echo $job_id ? "Update Job" : "Post Job"; ?></button>
@@ -104,3 +146,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 </body>
 </html>
+
