@@ -49,8 +49,8 @@ $adminDetails = $adminResult->fetch_assoc();
 <body>
     <div class="sidebar">
         <a href="admin_dashboard.php" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
-        <a href="manage_users.php"><i class="fas fa-users"></i> Manage Users</a>
-        <a href="manage_jobs.php"><i class="fas fa-briefcase"></i> Manage Jobs</a>
+        <a href="manage_users.html"><i class="fas fa-users"></i> Manage Users</a>
+        <a href="manage_jobs.html"><i class="fas fa-briefcase"></i> Manage Jobs</a>
         <a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
     </div>
 

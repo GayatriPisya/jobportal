@@ -1,43 +1,37 @@
 <?php
 session_start();
-include 'db.php';
+include '../includes/db.php';
 
+// Ensure admin is logged in
 if (!isset($_SESSION['admin_id'])) {
     header("Location: admin_login.html");
     exit();
 }
 
-$jobs = $conn->query("SELECT * FROM jobs");
+// Handle job deletion
+if (isset($_GET['delete'])) {
+    $job_id = intval($_GET['delete']);
+    $deleteQuery = "DELETE FROM jobs WHERE id = ?";
+    $stmt = $conn->prepare($deleteQuery);
+    $stmt->bind_param("i", $job_id);
+    
+    if ($stmt->execute()) {
+        header("Location: manage_jobs.html");
+        exit();
+    } else {
+        echo "Error deleting job: " . $conn->error;
+    }
+}
+
+// Fetch jobs and return JSON response for frontend
+$query = "SELECT id, title, description, apply_link FROM jobs";
+$result = $conn->query($query);
+
+$jobs = [];
+while ($row = $result->fetch_assoc()) {
+    $jobs[] = $row;
+}
+
+header('Content-Type: application/json');
+echo json_encode($jobs);
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Manage Jobs</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-</head>
-<body>
-    <div class="container mt-5">
-        <h2>Manage Jobs</h2>
-        <table class="table table-bordered">
-            <tr>
-                <th>Title</th>
-                <th>Category</th>
-                <th>Location</th>
-                <th>Actions</th>
-            </tr>
-            <?php while ($job = $jobs->fetch_assoc()) { ?>
-            <tr>
-                <td><?= $job['title'] ?></td>
-                <td><?= $job['category'] ?></td>
-                <td><?= $job['location'] ?></td>
-                <td>
-                    <a href="edit_job.php?id=<?= $job['id'] ?>" class="btn btn-warning btn-sm">Edit</a>
-                    <a href="delete_job.php?id=<?= $job['id'] ?>" class="btn btn-danger btn-sm">Delete</a>
-                </td>
-            </tr>
-            <?php } ?>
-        </table>
-    </div>
-</body>
-</html>
