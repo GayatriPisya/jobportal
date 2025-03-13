@@ -19,7 +19,7 @@ if (isset($_POST['keyword'])) {
                         <p><strong>Category:</strong> {$row['category']}</p>
                         <p><strong>Location:</strong> {$row['location']}</p>
                         <p><strong>Salary:</strong> \${$row['salary']}</p>
-                        <a href='apply.php?job_id={$row['id']}' class='btn btn-success'>Apply Now</a>
+                        <a href='{$row['apply_link']}' target='_blank' class='btn btn-success'>Apply Now</a>
                     </div>
                   </div>";
         }
