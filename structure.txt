@@ -25,10 +25,9 @@ job-portal-system/
 │   │── jobseeker_register.html    # Job Seeker registration (Frontend)
 │   │── jobseeker_login.html       # Job Seeker login (Frontend)
 │   │── jobseeker_dashboard.html   # Job Seeker dashboard (Frontend)
-│   │── apply_job.html             # Job Seeker - Apply for jobs (Frontend)
 │   │── 📜 jobseeker_register.php  # Backend - Job Seeker registration
 │   │── 📜 jobseeker_login.php     # Backend - Job Seeker login
-│   │── 📜 apply_job.php           # Backend - Apply for job
+│   │── 📜 jobseeker.php           # Backend - Apply for job
 │
 │── 📁 assets/                     # Static assets (CSS, JS, Images)
 │   │── logo.png                   # Project logo
