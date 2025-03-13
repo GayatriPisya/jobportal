@@ -1,15 +1,15 @@
 <?php
 include '../includes/db.php';
 
-if (isset($_POST['keyword'])) {
-    $keyword = '%' . $_POST['keyword'] . '%';
-    
+if (isset($_POST['keyword']) && !empty(trim($_POST['keyword']))) {
+    $keyword = '%' . trim($_POST['keyword']) . '%';
+
     $query = "SELECT * FROM jobs WHERE title LIKE ? OR description LIKE ? OR category LIKE ?";
     $stmt = $conn->prepare($query);
     $stmt->bind_param("sss", $keyword, $keyword, $keyword);
     $stmt->execute();
     $result = $stmt->get_result();
-    
+
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             echo "<div class='card mb-3'>
@@ -30,6 +30,6 @@ if (isset($_POST['keyword'])) {
     $stmt->close();
     $conn->close();
 } else {
-    echo "<p>Invalid request.</p>";
+    echo "<p>Please enter a valid keyword to search.</p>";
 }
 ?>
