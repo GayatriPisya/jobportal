@@ -1,0 +1,160 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7fc;
+    margin: 0;
+    padding: 0;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: #4c30ff;
+    position: fixed;
+    padding: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar h2 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.profile-section {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.profile-section img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.profile-section img:hover {
+    transform: scale(1.1);
+}
+
+.profile-section h5 {
+    margin-top: 10px;
+}
+
+.logout-btn {
+    background: #ff4d4d;
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.logout-btn:hover {
+    background: #e63939;
+}
+
+.nav-link {
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background 0.3s;
+    text-align: center;
+}
+
+.nav-link:hover {
+    background: #5a42ff;
+}
+
+/* Main Content */
+.container-fluid {
+    margin-left: 270px;
+    padding: 20px;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+}
+
+#search {
+    width: 60%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#search-btn {
+    background: #4c30ff;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#search-btn:hover {
+    background: #3620d4;
+}
+
+/* Job Listings */
+.job-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.job-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Profile Modal */
+.modal-content {
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.modal-header {
+    background: #4c30ff;
+    color: white;
+    border-radius: 10px 10px 0 0;
+}
+
+.modal-footer button {
+    background: #4c30ff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.modal-footer button:hover {
+    background: #3620d4;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .container-fluid {
+        margin-left: 220px;
+    }
+
+    #search {
+        width: 100%;
+    }
+}

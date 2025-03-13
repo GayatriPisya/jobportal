@@ -320,17 +320,6 @@ body {
     color: #6C757D;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .about-content, .team-grid, .guide-content {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .about-text, .guide-text {
-        text-align: center;
-    }
-}
 
 /* Contact Section */
 .contact {
@@ -445,7 +434,111 @@ body {
     margin-right: 10px;
 }
 
-/* Responsive Design */
+
+/* Responsive De
+/* Hero Section */
+@media (max-width: 768px) {
+    .hero {
+        height: auto;
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        margin-top: 30px;
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+}
+
+/* Features Section */
+@media (max-width: 992px) {
+    .feature-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Steps Section */
+@media (max-width: 992px) {
+    .steps {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .step {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .steps {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Job Categories */
+@media (max-width: 1024px) {
+    .category {
+        width: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .category {
+        width: 100%;
+        max-width: 250px;
+    }
+}
+
+/* About Section */
+@media (max-width: 992px) {
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .about-text {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .about-image img {
+        max-width: 80%;
+    }
+}
+
+/* Team Section */
+@media (max-width: 992px) {
+    .team-grid {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .team-member {
+        width: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .team-member {
+        width: 100%;
+    }
+}
+
+/* Contact Section */
 @media (max-width: 768px) {
     .contact-container {
         flex-direction: column;
@@ -457,42 +550,3 @@ body {
         max-width: 100%;
     }
 }
-
-/* Responsive Design */
-@media (max-width: 1024px) {
-    .category-container {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .category {
-        width: 200px;
-    }
-}
-
-@media (max-width: 768px) {
-    .category {
-        width: 100%;
-        max-width: 250px;
-    }
-}
-
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .hero {
-        height: auto;
-        padding: 20px;
-    }
-
-    .features {
-        flex-direction: column;
-    }
-
-    .feature-grid {
-        grid-template-columns: 1fr;
-    }
-    .feature-box {
-        margin: 15px 0;
-    }
-}
-
