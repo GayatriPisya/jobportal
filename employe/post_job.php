@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         // Insert new job
         $query = "INSERT INTO jobs (employer_id, title, category, location, salary, description, apply_link) 
-                  VALUES ('$employer_id', '$title', '$category', '$location', '$salary', '$description', '$apply_link')";
+                VALUES ('$employer_id', '$title', '$category', '$location', '$salary', '$description', '$apply_link')";
     }
 
     if (mysqli_query($conn, $query)) {
