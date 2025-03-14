@@ -125,7 +125,7 @@ $result = $stmt->get_result();
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="/jobportal/index.html">
             <i class="fas fa-briefcase mr-2"></i>
             Job Portal - Employer Dashboard
         </a>
