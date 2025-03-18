@@ -6,7 +6,11 @@
     <title>Responsive Navbar</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
-        /* Navbar Styling */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
         nav.navbar {
             background-color: rgba(0, 0, 0, 0.9);
             padding: 15px 20px;
@@ -18,43 +22,34 @@
             top: 0;
             z-index: 9999;
         }
-
         .logo a {
             color: #fff;
             font-size: 24px;
             font-weight: bold;
             text-decoration: none;
         }
-
         .logo i {
             margin-right: 10px;
         }
-
-        /* Navigation Links */
         .nav-links {
             display: flex;
             align-items: center;
             transition: right 0.3s ease-in-out;
         }
-
         .nav-links a {
             color: #fff;
             text-decoration: none;
             padding: 10px 15px;
             transition: 0.3s;
         }
-
         .nav-links a:hover {
             background-color: #fff;
             color: #000;
             border-radius: 5px;
         }
-
-        /* Dropdown */
         .dropdown {
             position: relative;
         }
-
         .dropdown button {
             background: none;
             border: none;
@@ -62,9 +57,7 @@
             font-size: 16px;
             cursor: pointer;
             padding: 10px 15px;
-            transition: 0.3s;
         }
-
         .dropdown-content {
             display: none;
             position: absolute;
@@ -75,40 +68,35 @@
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
             z-index: 99999;
         }
-
         .dropdown-content a {
             display: block;
             padding: 10px;
             color: #fff;
             text-decoration: none;
         }
-
         .dropdown-content a:hover {
             background: #e3e3e3;
             color: black;
         }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
+        /* Show dropdown on hover (desktop) */
+        @media (min-width: 1025px) {
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
         }
-
-        /* Hamburger Menu */
         .menu-toggle {
             display: none;
             cursor: pointer;
             font-size: 28px;
             color: white;
         }
-
-        /* Mobile Responsive */
         @media (max-width: 1024px) {
             .menu-toggle {
                 display: block;
             }
-
             .nav-links {
                 position: fixed;
-                right: -300px;
+                right: -250px;
                 top: 0;
                 width: 250px;
                 height: 100vh;
@@ -116,37 +104,25 @@
                 flex-direction: column;
                 align-items: flex-start;
                 padding-top: 80px;
-                transition: right 0.3s ease-in-out;
             }
-
             .nav-links.active {
                 right: 0;
+                transition: right 0.3s ease-in-out;
             }
-
             .nav-links a {
                 padding: 15px;
                 width: 100%;
             }
-
             .dropdown-content {
                 position: static;
-                width: 100%;
-                box-shadow: none;
+                display: none;
                 background: none;
-                display: none;
+                box-shadow: none;
+                width: 100%;
             }
-
-            .dropdown.show .dropdown-content {
-                display: block;
-            }
-
             .dropdown-content a {
-                padding: 12px 20px;
                 border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            }
-
-            .dropdown:hover .dropdown-content {
-                display: none;
+                padding-left: 25px;
             }
         }
     </style>
@@ -155,22 +131,22 @@
 
     <nav class="navbar">
         <div class="logo">
-            <a href="index.html"><i class="fa-solid fa-briefcase"></i> Job Portal</a>
+            <a href="#"><i class="fa-solid fa-briefcase"></i> Job Portal</a>
         </div>
         <div class="menu-toggle" id="menu-toggle" aria-expanded="false">
             <i class="fas fa-bars-staggered"></i>
         </div>
         <div class="nav-links" id="nav-links">
-            <div class="dropdown" id="dropdown">
+            <div class="dropdown">
                 <button id="dropdown-btn"><i class="fa-solid fa-user"></i> Select Your Role <i class="fa-solid fa-angle-down"></i></button>
                 <div class="dropdown-content" id="dropdown-content">
-                    <a href="admin/admin_login.html"><i class="fa-solid fa-user-shield"></i> Admin</a>
-                    <a href="employe/employer_register.html"><i class="fa-solid fa-building"></i> Employer</a>
-                    <a href="jobseeker/jobseeker_register.html"><i class="fa-solid fa-user"></i> Job Seeker</a>
+                    <a href="#"><i class="fa-solid fa-user-shield"></i> Admin</a>
+                    <a href="#"><i class="fa-solid fa-building"></i> Employer</a>
+                    <a href="#"><i class="fa-solid fa-user"></i> Job Seeker</a>
                 </div>
             </div>
-            <a href="about.html"><i class="fa-solid fa-info-circle"></i> About</a>
-            <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+            <a href="#"><i class="fa-solid fa-info-circle"></i> About</a>
+            <a href="#"><i class="fa-solid fa-envelope"></i> Contact</a>
         </div>
     </nav>
 
@@ -179,7 +155,7 @@
             const menuToggle = document.getElementById("menu-toggle");
             const navLinks = document.getElementById("nav-links");
             const dropdownBtn = document.getElementById("dropdown-btn");
-            const dropdown = document.getElementById("dropdown");
+            const dropdownContent = document.getElementById("dropdown-content");
             const menuIcon = menuToggle.querySelector('i');
 
             // Hamburger toggle
@@ -191,47 +167,39 @@
                 } else {
                     menuIcon.classList.remove("fa-times");
                     menuIcon.classList.add("fa-bars-staggered");
+                    dropdownContent.style.display = "none";
                 }
             });
 
-            // Mobile dropdown toggle
-            dropdownBtn.addEventListener("click", function (event) {
+            // Mobile dropdown click toggle
+            dropdownBtn.addEventListener("click", function (e) {
+                e.stopPropagation();
                 if (window.innerWidth <= 1024) {
-                    event.stopPropagation();
-                    dropdown.classList.toggle("show");
+                    dropdownContent.style.display = (dropdownContent.style.display === "block") ? "none" : "block";
                 }
             });
 
-            // Close when clicking outside
-            document.addEventListener("click", function (event) {
-                if (!dropdown.contains(event.target)) {
-                    dropdown.classList.remove("show");
+            // Close dropdown and menu on outside click
+            document.addEventListener("click", function (e) {
+                if (window.innerWidth <= 1024) {
+                    if (!dropdownBtn.contains(e.target) && !dropdownContent.contains(e.target)) {
+                        dropdownContent.style.display = "none";
+                    }
                 }
             });
 
-            // Close menu on link click (mobile)
+            // Close menu on nav link click (mobile)
             document.querySelectorAll(".nav-links a").forEach(link => {
                 link.addEventListener("click", () => {
                     if (window.innerWidth <= 1024) {
                         navLinks.classList.remove("active");
                         menuIcon.classList.remove("fa-times");
                         menuIcon.classList.add("fa-bars-staggered");
-                        dropdown.classList.remove("show");
+                        dropdownContent.style.display = "none";
                     }
                 });
             });
-
-            // Close nav on window resize
-            window.addEventListener('resize', () => {
-                if (window.innerWidth > 1024) {
-                    navLinks.classList.remove("active");
-                    menuIcon.classList.remove("fa-times");
-                    menuIcon.classList.add("fa-bars-staggered");
-                    dropdown.classList.remove("show");
-                }
-            });
         });
     </script>
-
 </body>
 </html>
