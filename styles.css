@@ -12,6 +12,9 @@ body {
     background-size: cover;
     background-attachment: fixed;
 }
+html {
+    scroll-behavior: smooth;
+}
 
 /* Hero Section */
 .hero {
