@@ -17,6 +17,7 @@
             justify-content: center;
             align-items: center;
             font-family: 'Poppins', sans-serif;
+            padding: 10px;
         }
 
         .login-container {
@@ -50,7 +51,7 @@
             border: none;
             color: #0a0a3b;
             padding-left: 45px;
-            padding-right: 45px; /* Added padding for the eye icon */
+            padding-right: 45px;
             height: 45px;
             border-radius: 8px;
         }
@@ -91,10 +92,34 @@
             background: #babdd7;
             color: #090c3a;
         }
+
+        @media (max-width: 768px) {
+            .login-container {
+                padding: 30px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            body {
+                align-items: center;
+                justify-content: center;
+            }
+            .login-container {
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .login-container h2 {
+                font-size: 24px;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- <div id="navbar"></div> -->
 
     <div class="login-container">
         <i style="font-size: 60px;" class="fa-solid fa-circle-user"></i>
@@ -136,9 +161,7 @@
         if (error) {
             document.getElementById("error-message").textContent = error;
         }
-
-       
-        
     </script>
 </body>
 </html>
+
