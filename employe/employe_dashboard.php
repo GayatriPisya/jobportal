@@ -132,7 +132,7 @@ $result = $stmt->get_result();
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="employer_login.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    <a class="nav-link" href="/jobportal/index.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
                 </li>
             </ul>
         </div>
