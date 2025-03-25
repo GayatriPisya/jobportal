@@ -1,12 +1,19 @@
 <?php
 include '../includes/db.php';
 
-if (isset($_POST['keyword']) && !empty(trim($_POST['keyword']))) {
-    $keyword = '%' . trim($_POST['keyword']) . '%';
+if ((isset($_POST['keyword']) && !empty(trim($_POST['keyword']))) || isset($_POST['fetch_all'])) {
+    if (isset($_POST['fetch_all'])) {
+        // Fetch all jobs when "Job Recommendations" is clicked
+        $query = "SELECT * FROM jobs";
+        $stmt = $conn->prepare($query);
+    } else {
+        // Fetch jobs based on search keyword
+        $keyword = '%' . trim($_POST['keyword']) . '%';
+        $query = "SELECT * FROM jobs WHERE title LIKE ? OR description LIKE ? OR category LIKE ?";
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("sss", $keyword, $keyword, $keyword);
+    }
 
-    $query = "SELECT * FROM jobs WHERE title LIKE ? OR description LIKE ? OR category LIKE ?";
-    $stmt = $conn->prepare($query);
-    $stmt->bind_param("sss", $keyword, $keyword, $keyword);
     $stmt->execute();
     $result = $stmt->get_result();
 
@@ -33,4 +40,3 @@ if (isset($_POST['keyword']) && !empty(trim($_POST['keyword']))) {
     echo "<p>Please enter a valid keyword to search.</p>";
 }
 ?>
-

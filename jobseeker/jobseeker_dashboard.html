@@ -89,8 +89,8 @@
 <body>
     <div class="sidebar">
         <a href="#profile"><i class="fas fa-user"></i> Profile</a>
-        <a href="#recommendations"><i class="fas fa-lightbulb"></i> Job Recommendations</a>
-        <a href="#applied"><i class="fas fa-file-alt"></i> Applied Jobs</a>
+        <a href="#" id="recommendationsLink"><i class="fas fa-lightbulb"></i> Job Recommendations</a>
+        <!-- <a href="#applied"><i class="fas fa-file-alt"></i> Applied Jobs</a> -->
         <a href="#saved"><i class="fas fa-bookmark"></i> Saved Jobs</a>
         <a href="/jobportal/index.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
     </div>
@@ -109,6 +109,7 @@
 
     <script>
         $(document).ready(function(){
+            // Search jobs based on keyword
             $("#searchBtn").click(function(){
                 let keyword = $("#jobSearch").val().trim();
                 
@@ -126,8 +127,21 @@
                     }
                 });
             });
+
+            // Fetch all jobs when "Job Recommendations" is clicked
+            $("#recommendationsLink").click(function(e){
+                e.preventDefault();
+
+                $.ajax({
+                    url: "jobseeker.php",
+                    type: "POST",
+                    data: { fetch_all: true },
+                    success: function(response){
+                        $("#jobResults").html(response);
+                    }
+                });
+            });
         });
     </script>
 </body>
 </html>
-

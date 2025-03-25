@@ -30,6 +30,7 @@
             overflow: hidden;
             max-width: 800px;
             width: 100%;
+            margin: 20px;
         }
 
         .left-panel {
@@ -94,6 +95,20 @@
         .btn-primary:hover {
             background-color: rgba(41, 44, 59, 0.788);
             color: #ffffff;
+        }
+        @media (max-width: 767px) {
+            .login-container {
+                flex-direction: column;
+                width: 100%;
+            }
+            .left-panel {
+                padding: 20px;
+                flex: 1;
+            }
+            .login-form {
+                padding: 20px;
+                width: 100%;
+            }
         }
     </style>
 </head>
